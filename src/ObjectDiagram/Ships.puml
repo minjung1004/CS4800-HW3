@@ -1,28 +1,29 @@
 @startuml
-object Ship0 {
+
+object "<u>titanic:Ship</u>" as ts {
     name = "Titanic"
     yearBuilt = "March31st,1909"
 }
 
-object Ship1 {
+object "<u>MVGemini:Ship</u>" as mv  {
     name = "MVGemini"
     yearBuilt = "May30th,1991"
 }
 
-object CruiseShip {
+object "<u>MVGemini:CruiseShip</u>" as cruise {
     maxNumberPassengers = 100
 }
 
-object Ship2 {
+object  "<u>EverGiven:Ship</u>" as eg {
        name = "EverGiven"
        yearBuilt = "September25th,2018"
 }
 
-object CargoShip {
+object "<u>EverGiven:CargoShip</u>" as cargo {
     cargoCapacityInTonnage = 220940
 }
 
 
-Ship1 -- CruiseShip
-Ship2 -- CargoShip
+mv -- cruise
+eg -- cargo
 @enduml

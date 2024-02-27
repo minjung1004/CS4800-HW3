@@ -1,21 +1,21 @@
 @startuml
-'https://plantuml.com/object-diagram
-
-object Instructor {
+object "<u>Nima:Instructor</u>" as nima {
     firstName = "Nima"
     lastName = " Davarpanah"
     officeNumber = "3-2636"
 }
 
-object Textbook {
+object "<u>CleanCode:Textbook</u>"  as cc{
     author = "Robert Cecil Martin"
     publisher = "Pearson"
     title = "CleanCode:A Handbook of Agile Software Craftsmanship"
 }
 
-object Course
+object "<u>CS4800:Course</u>" as swe {
+    name = "CS4800: Software Engineering"
+}
 
-Course -- Instructor
-Instructor -- Textbook
+swe -- nima
+nima -- cc
 
 @enduml

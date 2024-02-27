@@ -1,55 +1,55 @@
 @startuml
-object php_demo1 {
+object "<u>php_demo1:Folder</u>" as php {
     setName = "php_demo1"
 }
-object SourceFiles {
+object "<u>SourceFiles:Folder</u>" as sf {
     addSubfolder = "Source Files"
 }
-object IncludePath {
+object "<u>IncludePath:Folder</u>" as ip {
     addSubfolder  = "Include Path"
 }
-object RemoteFiles{
+object "<u>RemoteFiles:Folder</u>" as rf {
     addSubfolder  = "Remote Files"
 }
-object .phalcon {
+object "<u>.phalcon:Folder</u>" as phalcon {
     getSubfolder  = "Source Files"
     addSubfolder = ".phalcon"
 }
 
-object cache {
+object "<u>cache:Folder</u>" as cache{
     getSubfolder  = "Source Files"
     addSubfolder = "cache"
 }
-object public {
+object  "<u>public:Folder</u>" as public {
     getSubfolder  = "Source Files"
     addSubfolder = "public"
 }
 
 
-object .htaccess {
+object "<u>.htaccess:Files</u>" as hta {
     getSubfolder = "Source Files"
     getSubfolder = "public"
     addFile = ".htaccess"
 }
-object .htrouter {
+object "<u>.htrouter:Files</u>" as htr {
     getSubfolder = "Source Files"
     getSubfolder = "public"
     addFile = ".htrouter.php"
 }
-object index {
+object "<u>index:Files</u>" as index{
     getSubfolder = "Source Files"
     getSubfolder = "public"
     addFile = "index.html"
 }
 
-php_demo1 -- SourceFiles
-php_demo1 -- IncludePath
-php_demo1 -- RemoteFiles
-SourceFiles -- .phalcon
-SourceFiles -- cache
-SourceFiles -- public
-public -- .htaccess
-public -- .htrouter
+php -- sf
+php -- ip
+php -- rf
+sf -- phalcon
+sf -- cache
+sf -- public
+public -- hta
+public -- htr
 public -- index
 
 @enduml
