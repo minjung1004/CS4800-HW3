@@ -1,0 +1,55 @@
+@startuml
+object php_demo1 {
+    setName = "php_demo1"
+}
+object SourceFiles {
+    addSubfolder = "Source Files"
+}
+object IncludePath {
+    addSubfolder  = "Include Path"
+}
+object RemoteFiles{
+    addSubfolder  = "Remote Files"
+}
+object .phalcon {
+    getSubfolder  = "Source Files"
+    addSubfolder = ".phalcon"
+}
+
+object cache {
+    getSubfolder  = "Source Files"
+    addSubfolder = "cache"
+}
+object public {
+    getSubfolder  = "Source Files"
+    addSubfolder = "public"
+}
+
+
+object .htaccess {
+    getSubfolder = "Source Files"
+    getSubfolder = "public"
+    addFile = ".htaccess"
+}
+object .htrouter {
+    getSubfolder = "Source Files"
+    getSubfolder = "public"
+    addFile = ".htrouter.php"
+}
+object index {
+    getSubfolder = "Source Files"
+    getSubfolder = "public"
+    addFile = "index.html"
+}
+
+php_demo1 -- SourceFiles
+php_demo1 -- IncludePath
+php_demo1 -- RemoteFiles
+SourceFiles -- .phalcon
+SourceFiles -- cache
+SourceFiles -- public
+public -- .htaccess
+public -- .htrouter
+public -- index
+
+@enduml

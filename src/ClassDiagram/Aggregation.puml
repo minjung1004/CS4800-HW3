@@ -1,0 +1,45 @@
+@startuml
+class Instructor {
+    - firstName : String
+    - lastName : String
+    - officeNumber : String
+    + getFirstName() : String
+    + setFirstName(String firstName)
+    + getLastName() : String
+    + setLastName(String lastName)
+    + getOfficeNumber() : String
+    + setOfficeNumber(String officeNumber)
+    + toString() : String
+}
+
+class Textbook {
+    - title : String
+    - author : String
+    - publisher : String
+    + getTitle() : String
+    + setTitle(String title)
+    + getAuthor() : String
+    + setAuthor(String author)
+    + getPublisher() : String
+    + setPublisher(String publisher)
+    + toString() : String
+}
+
+class Course {
+    - name : String
+    - instructors : ArrayList<Instructor>
+    - textbooks : ArrayList<Textbook>
+    + Course()
+    + getName() : String
+    + setName(String name)
+    + getInstructors() : ArrayList<Instructor>
+    + setInstructor(Instructor instructor)
+    + getTextbooks() : ArrayList<Textbook>
+    + setTextbook(Textbook textbook)
+    + toString() : String
+    + printCourse()
+}
+
+Course o-- Instructor
+Course o-- Textbook
+@enduml
